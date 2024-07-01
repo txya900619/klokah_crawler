@@ -4,8 +4,8 @@ from klokah_crawler.items import KlokahCrawlerItem
 from klokah_crawler.spiders.twelve_spider import audio_url, twelve_dialect_map
 
 
-class TwelveSpider(scrapy.Spider):
-    name = "twelve"
+class TwelveWordSpider(scrapy.Spider):
+    name = "twelve_word"
 
     def start_requests(self):
         urls = [
