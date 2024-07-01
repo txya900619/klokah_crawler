@@ -5,3 +5,4 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 |  :---:  | :---: |   :---:   |
 | 閱讀文本 | web.klokah.tw/extension/readingtext/ | readingtext |
 | 共學教材 | web.klokah.tw/livetutorial/ | liveturorial |
+| 十二年國教課程 | https://web.klokah.tw/twelve/learn.php | twelve |
