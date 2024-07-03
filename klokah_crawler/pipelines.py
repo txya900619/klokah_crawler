@@ -15,11 +15,13 @@ from klokah_crawler.items import KlokahCrawlerSaveItem
 
 class PostDownloadPipeline:
     def process_item(self, item, spider):
+        storage_folder = get_project_settings().get("FILES_STORE")
+
         adapter = ItemAdapter(item)
         audio_path = None
-        if adapter.get("audio_meta"):
+        if adapter.get("audio_meta") and len(adapter["audio_meta"]) > 0:
             audio_path = adapter["audio_meta"][0]["path"]
-            storage_folder = get_project_settings().get("FILES_STORE")
+
             if not os.path.isabs(storage_folder):
                 storage_folder = os.path.join(
                     os.getcwd(), storage_folder.replace("./", "")
