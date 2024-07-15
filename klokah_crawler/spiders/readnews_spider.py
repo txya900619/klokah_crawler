@@ -1,5 +1,3 @@
-# https://web.klokah.tw/readnews/php/getNews.php?d=0&t=&p=79
-
 import scrapy
 
 from klokah_crawler.items import KlokahCrawlerItem
