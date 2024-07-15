@@ -4,6 +4,7 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
@@ -13,6 +14,7 @@ class KlokahCrawlerItem:
     mandarin: str
     dialect_id: int
     audio_meta: list[dict] = None
+    raw_text: Optional[str] = None
 
 
 @dataclass
@@ -21,3 +23,4 @@ class KlokahCrawlerSaveItem:
     mandarin: str
     dialect: str
     audio_path: str = None
+    raw_text: Optional[str] = None
