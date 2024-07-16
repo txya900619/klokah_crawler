@@ -63,7 +63,8 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "scrapy.pipelines.files.FilesPipeline": 1,
+    "klokah_crawler.pipelines.PreDownloadPipeline": 100,
+    "scrapy.pipelines.files.FilesPipeline": 200,
     "klokah_crawler.pipelines.PostDownloadPipeline": 300,
 }
 FILES_STORE = "./storage/audio"
