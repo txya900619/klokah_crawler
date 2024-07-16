@@ -1,6 +1,6 @@
 import scrapy
 
-from klokah_crawler.items import KlokahCrawlerItem
+from klokah_crawler.utils.parse_read_embed import parse_read_embed
 
 
 class DialogueWordSpider(scrapy.Spider):
@@ -38,21 +38,5 @@ class DialogueWordSpider(scrapy.Spider):
                 meta={
                     "dialect_id": dialect_id,
                 },
-                callback=self.parse_read_embed,
-            )
-
-    def parse_read_embed(self, response):
-        for sentence in response.css("#read-main > div"):
-            sentence_text = " ".join(sentence.css("div.word::text").getall())
-            translated_text = sentence.css("div.read-sentence.Ch::text").get()
-            audio_data_value = sentence.css(".read-play-btn::attr(data-value)").get()
-            audio_url = response.css(
-                f'audio[data-value="{audio_data_value}"] > source::attr(src)'
-            ).get()
-
-            yield KlokahCrawlerItem(
-                audio_url=[audio_url],
-                text=sentence_text,
-                mandarin=translated_text,
-                dialect_id=response.meta["dialect_id"],
+                callback=parse_read_embed,
             )

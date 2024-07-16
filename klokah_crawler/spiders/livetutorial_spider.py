@@ -1,6 +1,7 @@
 import scrapy
 
 from klokah_crawler.items import KlokahCrawlerItem
+from klokah_crawler.utils.parse_read_embed import parse_read_embed
 
 
 class LiveTutorialSpider(scrapy.Spider):
@@ -32,9 +33,9 @@ class LiveTutorialSpider(scrapy.Spider):
                 yield scrapy.Request(
                     url=url,
                     meta={"dialect_id": response.meta["dialect_id"]},
+                    callback=parse_read_embed,
                 )
 
-    def parse(self, response):
         for sentence in response.css("#read-main > div"):
             sentence_text = " ".join(sentence.css("div.word::text").getall())
             translated_text = sentence.css("div.read-sentence.Ch::text").get()

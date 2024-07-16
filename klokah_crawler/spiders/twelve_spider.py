@@ -106,18 +106,3 @@ class TwelveSpider(scrapy.Spider):
                 mandarin=sentence_translated,
                 dialect_id=dialect_id,
             )
-
-            # word_index = 1
-            # for word in sentence["word"]:
-            #     if len(word["ch"]) > 0:
-            #         word_audio = f"{audio_url}/{twelve_version_dialect_id:02d}/{level:02d}/{class_id:02d}-C-{sentence['order']}-{word_index}.mp3"
-            #         word_text = word["ab"]
-            #         word_translated = word["ch"]
-
-            #         yield KlokahCrawlerItem(
-            #             audio_url=[word_audio],
-            #             text=word_text,
-            #             mandarin=word_translated,
-            #             dialect_id=dialect_id,
-            #         )
-            #         word_index += 1
