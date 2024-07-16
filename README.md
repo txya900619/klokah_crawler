@@ -13,4 +13,5 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 圖畫故事篇 | web.klokah.tw/extension/ps_practice/ | ps_practice|
 | 生活會話篇 | web.klokah.tw/extension/con_practice/ | con_practice |
 | 生活會話篇 字 | web.klokah.tw/extension/con_practice/ | con_practice_word |
-
+| 閱讀書寫篇 | web.klokah.tw/extension/rd_practice/ | rd_practice |
+| 閱讀書寫篇 字 | web.klokah.tw/extension/rd_practice/ | rd_practice_word |
