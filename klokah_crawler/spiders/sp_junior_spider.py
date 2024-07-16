@@ -2,7 +2,7 @@ import scrapy
 import xmltodict
 
 from klokah_crawler.items import KlokahCrawlerItem
-from klokah_crawler.utils.parse_xml import TYPE_ID_TYPE_NAME_MAP, parse_metadata
+from klokah_crawler.utils.parse_sp import TYPE_ID_TYPE_NAME_MAP, parse_metadata
 
 
 class SpJuniorSpider(scrapy.Spider):
