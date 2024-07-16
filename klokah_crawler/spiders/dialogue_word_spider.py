@@ -27,7 +27,7 @@ class DialogueWordSpider(scrapy.Spider):
                 meta={
                     "dialect_id": dialect_id,
                 },
-                callback=self.parse_read_embed,
+                callback=parse_read_embed,
             )
 
         for lesson_name, lesson_tid_list in response["S3"].items():
