@@ -47,9 +47,8 @@ class EssaySpider(scrapy.Spider):
         for sentence in response.json():
             audio_url = []
             if sentence["snd"]:
-                audio_url.append(
-                    f"https://web.klokah.tw/text/sound/{sentence["sn"]}.mp3"
-                )
+                audio_path = sentence["sn"]
+                audio_url.append(f"https://web.klokah.tw/text/sound/{audio_path}.mp3")
 
             yield KlokahCrawlerItem(
                 audio_url=audio_url,
