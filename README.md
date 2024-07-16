@@ -19,4 +19,5 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 文化篇 字 | web.klokah.tw/extension/cu_practice/ | cu_practice_word |
 | 情境族語 對話練習 | web.klokah.tw/dialogue/ | dialogue |
 | 情境族語 單詞練習 | web.klokah.tw/dialogue/ | dialogue_word |
-| 情境族語 聽寫測驗 | web.klokah.tw/dialogue/ | dialogue_exam |
+| 族語短文 短文+句型 | web.klokah.tw/essay/ | essay |
+| 族語短文 單詞練習 | web.klokah.tw/essay/ | essay_word |
