@@ -10,3 +10,4 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 族語新聞閱讀 | https://web.klokah.tw/readnews/ | readnews |
 | 句型篇國中版 | https://web.klokah.tw/extension/sp_junior/practice.php | sp_junior |
 | 句型篇高中版 | https://web.klokah.tw/extension/sp_senior/practice.php | sp_senior |
+| 圖畫故事篇 | https://web.klokah.tw/extension/ps_practice/ | ps_practice|
