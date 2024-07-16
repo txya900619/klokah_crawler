@@ -8,3 +8,5 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 十二年國教課程 | https://web.klokah.tw/twelve/learn.php | twelve |
 | 十二年國教課程 字 | https://web.klokah.tw/twelve/learn.php | twelve_word |
 | 族語新聞閱讀 | https://web.klokah.tw/readnews/ | readnews |
+| 句型篇國中版 | https://web.klokah.tw/extension/sp_junior/practice.php | sp_junior |
+| 句型篇高中版 | https://web.klokah.tw/extension/sp_senior/practice.php | sp_senior |
