@@ -22,3 +22,4 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 族語短文 短文+句型 | web.klokah.tw/essay/ | essay |
 | 族語短文 單詞練習 | web.klokah.tw/essay/ | essay_word |
 | 繪本平台 | web.klokah.tw/pbc/ | pbc |
+| 教學模組 | web.klokah.tw/mode/ | mode |
