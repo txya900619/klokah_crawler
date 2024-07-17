@@ -4,7 +4,7 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 區塊名稱 | Home URL | Spider Name |
 |  :---:  | :---: |   :---:   |
 | 閱讀文本 | web.klokah.tw/extension/readingtext/ | readingtext |
-| 共學教材 | web.klokah.tw/livetutorial/ | liveturorial |
+| 共學教材 | web.klokah.tw/livetutorial/ | livetutorial |
 | 十二年國教課程 | web.klokah.tw/twelve/learn.php | twelve |
 | 十二年國教課程 字 | web.klokah.tw/twelve/learn.php | twelve_word |
 | 族語新聞閱讀 | web.klokah.tw/readnews/ | readnews |
