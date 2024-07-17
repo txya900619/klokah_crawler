@@ -24,3 +24,4 @@ crawler for [web.klokah.tw](https://web.klokah.tw)
 | 繪本平台 | web.klokah.tw/pbc/ | pbc |
 | 教學模組 | web.klokah.tw/mode/ | mode |
 | 互動模組 | web.klokah.tw/interact/ | interact |
+| LIMA 有聲書 | web.klokah.tw/lima/ | lima |
