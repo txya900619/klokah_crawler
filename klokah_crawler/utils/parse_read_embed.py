@@ -10,6 +10,9 @@ def parse_read_embed(response):
             f'audio[data-value="{audio_data_value}"] > source::attr(src)'
         ).get()
 
+        if translated_text is None or len(translated_text) == 0:
+            continue
+
         yield KlokahCrawlerItem(
             audio_url=[audio_url],
             text=sentence_text,
