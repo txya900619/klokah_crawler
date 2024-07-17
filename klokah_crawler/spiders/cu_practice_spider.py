@@ -1,5 +1,4 @@
 import scrapy
-from scrapy_playwright.page import PageMethod
 
 from klokah_crawler.utils.parse_read_embed import parse_read_embed
 
@@ -8,30 +7,17 @@ class CuPracticeSpider(scrapy.Spider):
     name = "cu_practice"
 
     def start_requests(self):
-        urls = [
-            (
-                dialect_id,
-                f"https://web.klokah.tw/extension/cu_practice/index.php?d={dialect_id}&l={lesson_id}&view=article",
-            )
-            for lesson_id in range(1, 31)
-            for dialect_id in [i for i in range(1, 44) if i != 12]
-        ]
-        for dialect_id, url in urls:
-            yield scrapy.Request(
-                url=url,
-                callback=self.get_iframe_url,
-                meta={
-                    "playwright": True,
-                    "playwright_page_methods": [
-                        PageMethod("wait_for_selector", "#text-frame"),
-                    ],
-                    "dialect_id": dialect_id,
-                },
-            )
-
-    def get_iframe_url(self, response):
         yield scrapy.Request(
-            url=response.css("#text-frame::attr(src)").get(),
-            meta={"dialect_id": response.meta["dialect_id"]},
-            callback=parse_read_embed,
+            url="https://web.klokah.tw/extension/cu_practice/textId.json",
+            callback=self.get_read_embed_url,
         )
+
+    def get_read_embed_url(self, response):
+        response = response.json()
+        for dialect_id, read_embed_id_list in response.items():
+            for read_embed_id in read_embed_id_list:
+                yield scrapy.Request(
+                    url=f"https://web.klokah.tw/text/read_embed.php?tid={read_embed_id}&mode=1",
+                    meta={"dialect_id": dialect_id},
+                    callback=parse_read_embed,
+                )
