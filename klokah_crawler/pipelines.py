@@ -15,7 +15,7 @@ from klokah_crawler.items import KlokahCrawlerSaveItem
 class PreDownloadPipeline:
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
-        if adapter["audio_url"][0] is None:
+        if len(adapter["audio_url"]) > 0 and adapter["audio_url"][0] is None:
             adapter["audio_url"] = []
             return item
 
