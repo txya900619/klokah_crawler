@@ -41,7 +41,10 @@ class InteractSpider(scrapy.Spider):
         dialect_id = response.meta["dialect_id"]
         response = response.json()
         for data in response:
-            audio_path = data["soundPath"].replace("../../../", "")
+            audio_path = data["soundPath"]
+            if audio_path is not None:
+                audio_path = audio_path.replace("../../../", "")
+
             yield KlokahCrawlerItem(
                 audio_url=[f"https://web.klokah.tw/{audio_path}"],
                 text=data["Ab"],

@@ -53,7 +53,7 @@ class ModeSpider(scrapy.Spider):
                 meta={
                     "dialect_id": dialect_id,
                 },
-                callback=self.parse_main,
+                callback=self.parse_instructions,
             )
 
     def parse_elementary(self, response):
@@ -96,14 +96,20 @@ class ModeSpider(scrapy.Spider):
         response = response.json()
 
         for metadata in response:
-            ab_audio_path = metadata["abPath"].replace("../../", "")
+            ab_audio_path = metadata["abPath"]
+            if ab_audio_path is not None:
+                ab_audio_path = ab_audio_path.replace("../../", "")
+
             yield KlokahCrawlerItem(
                 audio_url=[f"https://web.klokah.tw/{ab_audio_path}"],
                 text=metadata["ab"],
                 mandarin=metadata["ch"],
                 dialect_id=dialect_id,
             )
-            key_audio_path = metadata["keyPath"].replace("../../", "")
+            key_audio_path = metadata["keyPath"]
+            if key_audio_path is not None:
+                key_audio_path = key_audio_path.replace("../../", "")
+
             yield KlokahCrawlerItem(
                 audio_url=[f"https://web.klokah.tw/{key_audio_path}"],
                 text=metadata["keyw"],
@@ -116,7 +122,10 @@ class ModeSpider(scrapy.Spider):
         response = response.json()
 
         for metadata in response:
-            audio_path = metadata["path"].replace("../../", "")
+            audio_path = metadata["path"]
+            if audio_path is not None:
+                audio_path = audio_path.replace("../../", "")
+
             yield KlokahCrawlerItem(
                 audio_url=[f"https://web.klokah.tw/{audio_path}"],
                 text=metadata["ab"],
@@ -129,7 +138,10 @@ class ModeSpider(scrapy.Spider):
         response = response.json()
 
         for metadata in response:
-            audio_path = metadata["path"].replace("../../", "")
+            audio_path = metadata["path"]
+            if audio_path is not None:
+                audio_path = audio_path.replace("../../", "")
+
             yield KlokahCrawlerItem(
                 audio_url=[f"https://web.klokah.tw/{audio_path}"],
                 text=metadata["ab"],
