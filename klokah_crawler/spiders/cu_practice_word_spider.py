@@ -21,6 +21,9 @@ class CuPracticeWordSpider(scrapy.Spider):
             lesson_no = lesson_metadata["no"]
             for word_metadata in lesson_metadata["word"].values():
                 word_order = word_metadata["word_order"]
+                word_metadata["word_ab"] = word_metadata["word_ab"].replace(
+                    "&rsquo;", "’"
+                )
 
                 yield KlokahCrawlerItem(
                     audio_url=[
