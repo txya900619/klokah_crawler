@@ -96,7 +96,7 @@ class TwelveSpider(scrapy.Spider):
         )
 
         for sentence in response_json["sentence"]:
-            sentence_text = "".join([word["ab"] for word in sentence["word"]])
+            sentence_text = sentence["ab"]
             sentence_translated = sentence["chinese"]
             sentence_order = sentence["order"]
             sentence_audio = f"{audio_url}/{twelve_version_dialect_id:02d}/{level:02d}/{class_id:02d}-B-{sentence_order}.mp3"
