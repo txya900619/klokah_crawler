@@ -92,7 +92,7 @@ six==1.16.0
     # via automat
 tldextract==5.1.2
     # via scrapy
-twisted==24.3.0
+twisted==24.7.0
     # via scrapy
 typing-extensions==4.12.2
     # via twisted
